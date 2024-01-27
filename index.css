@@ -65,3 +65,23 @@ body{
     right: -45px;
     top: 380px;
 }
+
+.banner-img{
+    border-radius: 100%;
+    border: 3px solid black;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    right: 300px;
+    background-image: url('./media/hero/banner-img.jpeg');
+    background-size: cover;
+    z-index: 1;
+}
+
+.banner-text{
+    color: var(--primary-color);
+    position: absolute;
+    right: 302px;
+    text-align: center;
+    z-index: 0;
+}

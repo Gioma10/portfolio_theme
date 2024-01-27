@@ -1,29 +1,27 @@
 // navbar link
-let cont=0;
-if(cont==0){
-    gsap.set(".nav-link", {
-    y: -200,
-    });
-    gsap.to(".nav-link", {
-    y: 0,
-    duration: 0.7,
-    stagger: 0.1,
-    ease: "power1.out",
-    });
-    // icon social
-    gsap.set("i", {
-    fontSize: 22,
-    y: -200,
-    x: -50,
-    });
-    gsap.to(".fa-brands", {
-    y: 0,
-    stagger: 0.1,
-    ease: "power1.out",
-    duration: 1.6,
-    });
-    cont=1;
-}
+
+
+gsap.set(".nav-link", {
+y: -200,
+});
+gsap.to(".nav-link", {
+y: 0,
+duration: 0.7,
+stagger: 0.1,
+ease: "power1.out",
+});
+// icon social
+gsap.set("i", {
+fontSize: 22,
+y: -200,
+x: -50,
+});
+gsap.to(".fa-brands", {
+y: 0,
+stagger: 0.1,
+ease: "power1.out",
+duration: 1.6,
+});
 
 
 // immagini linguaggi di programmazione hero
@@ -73,6 +71,20 @@ arrowHero.addEventListener('click',()=>{
             rotate:'random(20,360)',
             delay:0.5,
         })
+        // banner image animation open
+        gsap.to('.banner-img', {
+            x: -200,
+            duration:1,
+            delay:0.7,
+            ease:'power1.out'
+        })
+        // banner text animation open
+        gsap.to('.banner-text', {
+            x: 200,
+            duration:1,
+            delay:0.7,
+            ease:'power1.out'
+        })
     }else{
         // chiusura banner
         gsap.to('.banner-hero', {
@@ -94,6 +106,18 @@ arrowHero.addEventListener('click',()=>{
             delay:0.5,
             duration:2,
             ease:'power3.in'
+        })
+        // banner image animation close
+        gsap.to('.banner-img', {
+            x: 0,
+            duration:0.5,
+            ease:'power1.out'
+        })
+        // banner text animation close
+        gsap.to('.banner-text', {
+            x: 0,
+            duration:0.5,
+            ease:'power1.out'
         })
     }
  
