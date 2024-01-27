@@ -1,0 +1,23 @@
+body{
+    background-color: black;
+    color: white;
+}
+/* generic class  */
+.myborder{
+    border: 2px solid red;
+}
+.vh7{
+    height: 7vh;
+}
+.no-decoration{
+    text-decoration: none;
+    color: black;
+}
+/* navbar */
+.link-color{
+    color: grey;
+}
+.link-color:hover{
+    color: white;
+}
+
