@@ -13,6 +13,10 @@ body{
     text-decoration: none;
     color: black;
 }
+:root{
+    --primary-color:black;
+    --secondary-color:white;
+}
 /* navbar */
 .link-color{
     color: grey;
@@ -21,3 +25,43 @@ body{
     color: white;
 }
 
+/* header */
+/* immagini  */
+
+.super-container-logo-hero{
+    position: relative;
+    width: 440px;
+    height: 400px;
+}
+.container-logo-hero{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: -900px;
+    z-index: 0;
+    width: 600px;
+}
+.logo_pro_custom{
+    width: 100px;
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+}
+
+/* banner hero */
+.banner-hero{
+    border-radius: 200px;
+    width: 1500px;
+    height: 400px;
+    background-color: white;
+    color: var(--secondary-color);
+    z-index: 1;
+}
+
+.arrow-hero{
+    position: absolute;
+    color: var(--primary-color);
+    right: -45px;
+    top: 380px;
+}
