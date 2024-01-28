@@ -1,6 +1,5 @@
+//!NAVBAR
 // navbar link
-
-
 gsap.set(".nav-link", {
 y: -200,
 });
@@ -23,32 +22,31 @@ ease: "power1.out",
 duration: 1.6,
 });
 
+// click link navbar
+const changeColor= document.querySelectorAll('.click-color');
+let linkNavbar= 5;
+for(let i=0;i<linkNavbar;i++){
+    changeColor[i].addEventListener('click',()=>{
+        gsap.to(changeColor, {
+            color:'grey',
+            duration:0.1,
+        })
+        gsap.to(changeColor[i], {
+            color:'white',
+            duration:0.1,
+        })
+    });
+}
 
-// immagini linguaggi di programmazione hero
 
-// gsap.to('.logo_pro_custom', {
-//     autoAlpha: 1,
-//     duration:2,
-//     repeat:-1,
-//     yoyo:true,
-//     stagger: {
-//         amount:5,
-//         from:'random',
-//         ease:'none'
-        
-//     },
-// })
-
-
+//! HEADER
 // apetura e chiusura banner hero
 gsap.set('.banner-hero', {
-   x:-1530,
+    x:-1530,
 })
-
 const arrowHero= document.querySelector('.arrow-hero');
-
-// evento click freccettina
 let arrowValidation= true;
+// evento click freccettina
 arrowHero.addEventListener('click',()=>{
     
     if(arrowValidation){
@@ -122,4 +120,44 @@ arrowHero.addEventListener('click',()=>{
     }
  
     
+})
+
+
+//! SECTION ABOUT ME
+
+const s1= document.querySelector('#aboutMe');
+
+// animazione titolo section 1
+gsap.set('#about-title', {
+    y:0,
+    x:250,
+})
+gsap.to('#about-title', {
+    y:130,
+    duration:3,
+    ease:'power3.out'
+})
+
+// animazione immagine section 1
+gsap.set('.about-img', {
+    y:-100,
+    autoAlpha:0,
+})
+gsap.to('.about-img', {
+    autoAlpha:1,
+    x:300,
+    duration:3,
+    ease:'power3.out',
+})
+// animazione testo section 1
+gsap.set('.about-text', {
+    y:0,
+    x:200,
+    autoAlpha:0,
+})
+gsap.to('.about-text', {
+    autoAlpha:1,
+    x:-200,
+    duration:3,
+    ease:'power3.out',
 })

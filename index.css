@@ -17,17 +17,24 @@ body{
     --primary-color:black;
     --secondary-color:white;
 }
+
 /* navbar */
 .link-color{
     color: grey;
 }
+.link-color2{
+    color: white;
+}
 .link-color:hover{
     color: white;
+}
+.navbar-custom{
+background-color: black;
+
 }
 
 /* header */
 /* immagini  */
-
 .super-container-logo-hero{
     position: relative;
     width: 440px;
@@ -84,4 +91,30 @@ body{
     right: 302px;
     text-align: center;
     z-index: 0;
+}
+
+/* section 1 */
+.s1{
+    height: 90vh;
+    background-color: white;
+}
+
+.about-img{
+    background-image: url('./media/section1/s1-img.jpeg');
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 600px;
+    border-radius: 50px;
+}
+.about-text{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    text-align: justify;
+    background-color: black;
+    width: 700px;
+    height: 400px;
+    color: white;
+    border-radius: 50px;
 }
