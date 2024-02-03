@@ -1,7 +1,7 @@
 //!NAVBAR
 // navbar link
 gsap.set(".nav-link", {
-y: -200,
+y: -500,
 });
 gsap.to(".nav-link", {
 y: 0,
@@ -10,16 +10,16 @@ stagger: 0.1,
 ease: "power1.out",
 });
 // icon social
-gsap.set("i", {
+gsap.set(".fa-brands", {
 fontSize: 22,
-y: -200,
+y: -500,
 x: -50,
 });
 gsap.to(".fa-brands", {
 y: 0,
 stagger: 0.1,
 ease: "power1.out",
-duration: 1.6,
+duration: 2,
 });
 
 // click link navbar
@@ -125,39 +125,140 @@ arrowHero.addEventListener('click',()=>{
 
 //! SECTION ABOUT ME
 
-const s1= document.querySelector('#aboutMe');
+//* Animazione gsap
+// const aboutMe= document.querySelector('#aboutMe');
 
-// animazione titolo section 1
-gsap.set('#about-title', {
-    y:0,
-    x:250,
-})
-gsap.to('#about-title', {
-    y:130,
-    duration:3,
-    ease:'power3.out'
+// // animazione titolo section 1
+// function s1TitleAnimate(){
+//     gsap.set('#about-title', {
+//         y:0,
+//         x:800,
+//     })
+//     gsap.to('#about-title', {
+//         y:180,
+//         duration:3,
+//         ease:'power3.out'
+//     })
+
+// }
+
+// // animazione immagine section 1
+// function s1ImgAnimate(){
+
+//     gsap.set('.about-img', {
+//         y:130,
+//         autoAlpha:0,
+//     })
+//     gsap.to('.about-img', {
+//         autoAlpha:1,
+//         x:300,
+//         duration:3,
+//         ease:'power3.out',
+//     })
+// }
+// // animazione testo section 1
+// function s1TextAnimate(){
+
+//     gsap.set('.about-text', {
+//         y:230,
+//         x:-100,
+//         autoAlpha:0,
+//     })
+//     gsap.to('.about-text', {
+//         autoAlpha:1,
+//         x:-200,
+//         duration:3,
+//         ease:'power3.out',
+//     })
+// }
+
+// // observe
+// let observer = new IntersectionObserver((entries) => {
+//     entries.forEach((entrie) => {
+//         console.log(entrie);
+//         if (entrie.isIntersecting) {
+//             s1TitleAnimate();
+//             s1ImgAnimate();
+//             s1TextAnimate();
+//         console.log(entrie);
+//         }
+//     })
+// })
+// observer.observe(aboutMe);
+
+
+
+
+
+//! SECTION WORK
+gsap.registerPlugin(ScrollTrigger);
+
+// let sections = gsap.utils.toArray(".panel");
+
+// gsap.to(sections, {
+//     xPercent: -100 * (sections.length - 1),
+//     ease: "ease",
+//     scrollTrigger: {
+//         marker:true,
+//       trigger: ".s2",
+//       pin: true,
+//       scrub: 1,
+//       snap: {
+//         snapTo: 1 / (sections.length - 1),
+//         duration: 0.1,
+//         delay: 0.1,
+//         ease: "power1.inOut"
+//       },
+//       // base vertical scrolling on how wide the container is so it feels more natural.
+//       end: "+=3500"
+//     }
+//   });
+
+//! SECTION CARD
+
+let working=[
+    {img: './media/section2/static.jpeg', title: 'STATIC', price: '500'},
+    {img: './media/section2/portfolio.jpeg', title: 'PORTFOLIO', price: '1000'},
+    {img: './media/section2/e-commerce.jpeg', title: 'E-COMMERCE', price: '1500'},
+];
+
+let cardWrapper= document.querySelector('#card-wrapper');
+
+working.forEach((work)=>{
+    let div= document.createElement('div');
+    div.classList.add('col-12', 'col-md-4', 'h-100');
+    div.innerHTML= `
+        <div class="s2-card-container ">
+            <div class="card-custom p-4">
+                <div class="h-50 w-100">
+                    <img class="img-fluid card-img-custom" src="${work.img}" alt="">
+                </div>
+                <div class="card-body-custom my-3 w-100">
+                    <h4>${work.title}</h4>
+                    <p>${work.price}$</p>
+                </div>
+                <button class="btn-card"><a class="no-decoration" href="#contact">BUY</a></button>
+            </div>
+        </div>
+    `
+    cardWrapper.appendChild(div);
+
 })
 
-// animazione immagine section 1
-gsap.set('.about-img', {
-    y:-100,
-    autoAlpha:0,
-})
-gsap.to('.about-img', {
-    autoAlpha:1,
-    x:300,
-    duration:3,
-    ease:'power3.out',
-})
-// animazione testo section 1
-gsap.set('.about-text', {
-    y:0,
-    x:200,
-    autoAlpha:0,
-})
-gsap.to('.about-text', {
-    autoAlpha:1,
-    x:-200,
-    duration:3,
-    ease:'power3.out',
-})
+//animazione card
+let cards = document.querySelectorAll('.card-custom');
+
+cards.forEach((card, index) =>{
+    card.setAttribute("data-aos","flip-left");
+    // card.setAttribute("data-aos","zoom-in"); --> alternative animation 
+    card.setAttribute("data-aos-duration","1000");
+    if(index==1){
+        card.setAttribute("data-aos-delay", "200");
+    }else if (index==2){
+        card.setAttribute("data-aos-delay", "300");
+    }
+});
+
+
+//Inizializzazione AOS
+AOS.init();
