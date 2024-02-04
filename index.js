@@ -10,12 +10,12 @@ stagger: 0.1,
 ease: "power1.out",
 });
 // icon social
-gsap.set(".fa-brands", {
+gsap.set(".fa-brands-navbar", {
 fontSize: 22,
 y: -500,
 x: -50,
 });
-gsap.to(".fa-brands", {
+gsap.to(".fa-brands-navbar", {
 y: 0,
 stagger: 0.1,
 ease: "power1.out",
@@ -228,7 +228,7 @@ working.forEach((work)=>{
     let div= document.createElement('div');
     div.classList.add('col-12', 'col-md-4', 'h-100');
     div.innerHTML= `
-        <div class="s2-card-container ">
+        <div class="s2-card-container">
             <div class="card-custom p-4">
                 <div class="h-50 w-100">
                     <img class="img-fluid card-img-custom" src="${work.img}" alt="">
@@ -258,6 +258,108 @@ cards.forEach((card, index) =>{
         card.setAttribute("data-aos-delay", "300");
     }
 });
+
+
+//! SECTION FEEDBACK AND SKILLS
+//Feedback
+
+//Feedback card dinamiche
+let users=[
+    {img: 'user1', name: 'Daniele', work: 'Medico', feedback: 'Fantastico lavoro!!!', social:'instagram'},
+    {img: 'user2', name: 'Rebecca', work: 'Ingegnere', feedback: 'Prezzo troppo basso per le capacità che dimostra...', social:'linkedin'},
+    {img: 'user3', name: 'Anna', work: 'Avvocato', feedback: 'Troppo bravo e gentile, lo consiglio a tutti.', social:'youtube'},
+    {img: 'user4', name: 'Andrea', work: 'Insegnante', feedback: 'Il sito è stato fatto esattamente come lo volevo', social:'twitter'},
+    {img: 'user5', name: 'Gabriele', work: 'Psicologo', feedback: 'Il migliore per realizzare il vostro sito personale', social:'tiktok'},  
+];
+
+let feedSlider= document.querySelector('#feedSlider');
+
+users.forEach((user)=>{
+    let div= document.createElement('div');
+    div.classList.add('feed');
+    div.innerHTML= `
+        <div class="d-flex justify-content-center rounded-5 w-100 my-4">
+            <div class="feed-container-img">
+                <div class="feed-img-${user.img} ps-2"></div>
+            </div>
+            <div class="feed-name">
+                <h5 class="m-0">${user.name}</h5>
+                <h6 class="fst-italic">${user.work}</h6>
+            </div>
+            <div class="feed-container-icon">
+                <i class="fa-brands fa-2xl fa-${user.social}"></i>
+            </div>
+        </div>
+        <div class="feed-text px-3 pt-4">
+            <p>${user.feedback}</p>
+        </div>
+    `
+    feedSlider.appendChild(div);
+})
+
+
+//Feedback animazione
+const feeds = document.querySelectorAll(".feed");
+const offset = 20;
+
+gsap.set(feeds, {
+  x: (index) => offset * index,
+  y: (index) => -offset * index,
+  zIndex: (index) => feeds.length - index,
+});
+
+
+function diagonalLoop(feeds) {
+    let totalFeeds = feeds.length;
+    // console.log(totalFeeds);
+
+    let currentFeed = 0;
+  
+    function updatePositions() {
+      for (let i = 0; i < totalFeeds; i++) {
+        let feedIndex = (currentFeed + i) % totalFeeds;
+        let feed = feeds[feedIndex];
+        gsap.to(feed, {
+          x: offset * i,
+          y: -offset * i,
+          zIndex: totalFeeds - i,
+          scale: 1,
+          opacity: 1
+        });
+      }
+    }
+    function moveToNext() {
+      const movingFeed = feeds[currentFeed];
+  
+      gsap.to(movingFeed, {
+        // scale: 0.5,
+        // y: "+=100",
+        // opacity: 0,
+        // duration: 0.1,
+        onComplete: () => {
+          currentFeed = (currentFeed + 1) % totalFeeds;
+        //   console.log(currentFeed);
+          updatePositions();
+  
+          gsap.to(movingFeed, {
+            scale: 1,
+            y: "-=50",
+            opacity: 0,
+            duration: 0.2,
+          });
+        }
+      });
+    }
+  
+    setInterval(moveToNext, 2000);
+  
+    updatePositions();
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+      diagonalLoop(feeds);
+  });
+
 
 
 //Inizializzazione AOS
