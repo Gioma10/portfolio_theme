@@ -152,8 +152,15 @@
       <div class="col-12 title-contact">
         <h3 class="display-3" data-aos="fade-down" data-aos-duration="1000">Contact Me</h3>
       </div>
+      
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
       <div class="col-12 d-flex justify-content-center">
         <form method="POST" action="{{route('contactMe')}}" class="form-container">
+          @csrf
           <label for="name" data-aos="fade-right" data-aos-duration="1000">Name</label>
           <input class="input-form" id="name" name="name" type="text" data-aos="fade-left" data-aos-duration="1000">
           <label for="email" data-aos="fade-right" data-aos-duration="1000">Email</label>
@@ -161,7 +168,7 @@
           <label for="message" data-aos="fade-right" data-aos-duration="1000">Message</label>
           <textarea class="input-form" name="text" id="message" cols="30" rows="10" data-aos="fade-left" data-aos-duration="1000"></textarea>
           <div class="w-100 d-flex justify-content-center">
-            <button class="btn-form" data-aos="fade-up" data-aos-duration="1000"><a class="no-decoration" href="#">Send</a></button>
+            <button type="submit" class="btn-form" data-aos="fade-up" data-aos-duration="1000">Send</button>
           </div>
         </form>
       </div>

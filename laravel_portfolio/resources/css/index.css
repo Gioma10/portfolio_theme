@@ -445,17 +445,11 @@ background-color: black;
     border-radius: 10px;
     background-color: rgb(61, 49, 67);
     border: none;
-    transition: all 1s;
-}
-.btn-form>a{
     color: grey;
     transition: all 1s;
 }
-
-.btn-form:hover>a{
-    color: white;
-}
 .btn-form:hover{
+    color: white;
     background-color: rgb(56, 12, 96);
 }
 
