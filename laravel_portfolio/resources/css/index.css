@@ -1,0 +1,474 @@
+body{
+    background-color: black;
+    color: white;
+}
+/* generic class  */
+.myborder{
+    border: 2px solid red;
+}
+.vh7{
+    height: 7vh;
+}
+.no-decoration{
+    text-decoration: none;
+    color: black;
+}
+:root{
+    --primary-color:black;
+    --secondary-color:white;
+}
+
+/* navbar */
+.link-color{
+    color: grey;
+    transition: all 1s;
+}
+.link-color2{
+    color: white;
+}
+.link-color:hover{
+    color: white;
+
+}
+.navbar-custom{
+background-color: black;
+
+}
+
+/* header */
+/* immagini  */
+.super-container-logo-hero{
+    position: relative;
+    width: 440px;
+    height: 400px;
+}
+.container-logo-hero{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: -900px;
+    z-index: 0;
+    width: 600px;
+}
+.logo_pro_custom{
+    width: 100px;
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+}
+
+/* banner hero */
+.banner-hero{
+    border-radius: 200px;
+    width: 1500px;
+    height: 400px;
+    background-color: white;
+    color: var(--secondary-color);
+    z-index: 1;
+}
+
+.arrow-hero{
+    position: absolute;
+    color: var(--primary-color);
+    right: 0px;
+    top: 190px;
+}
+
+.banner-img{
+    border-radius: 100%;
+    border: 3px solid black;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    right: 300px;
+    background-image: url('/public/media/hero/banner-img.jpeg');
+    background-size: cover;
+    z-index: 1;
+}
+
+.banner-text{
+    color: var(--primary-color);
+    position: absolute;
+    right: 302px;
+    text-align: center;
+    z-index: 0;
+}
+
+/* section 1 */
+.s1{
+    /* con gsap */
+    /* height: 100vh; */
+
+    /* con aos  */
+    height: 80vh;
+    /* background-color: white; */
+    background-color: rgb(61, 49, 67);
+    color: black;
+}
+
+/* Solo con animazioni GSAP*/
+/* 
+#about-title{
+    position: absolute;
+}
+.about-img{
+    background-image: url('./media/section1/s1-img.jpeg');
+    background-position: center;
+    background-size: cover;
+    width: 55%;
+    height: 70vh;
+    border-radius: 50px;
+}
+.about-text{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    text-align: justify;
+    background-color: black;
+    width: 700px;
+    height: 400px;
+    color: white;
+    border-radius: 50px;
+} */
+
+/* Con AOS */
+.about-img{
+    background-image: url('/public/media/section1/s1-img.jpeg');
+    background-position: center;
+    background-size: cover;
+    width: 55%;
+    height: 80%;
+}
+
+.about-text{
+    width: 80%;
+    text-align: justify;
+    background-color: black;
+    color: white;
+}
+
+/* SECTION SERVICE */
+.s2{
+    height: 100vh;
+    background-color: black;
+}
+
+/* .row-s2-custom{
+    background-color: white;
+} */
+/* .s2-title-container{
+    height: 10%;
+} */
+.s2-card-container{
+    /* height: 100%; */
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-custom{
+    height: 55%;
+    width: 70%;
+    background-color: rgb(61, 49, 67);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ;
+    margin-bottom: 100px;
+}
+
+.card-body-custom{
+    color: black;
+    text-align: center;
+    border-top: 1px solid rgb(56, 12, 96);
+    border-bottom: 1px solid rgb(56, 12, 96);
+    padding-top: 20px ;
+}
+
+.btn-card{
+    color: grey;
+    background-color: black;
+    padding: 5px;
+    width: 50%;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.5s;
+}
+.btn-card:hover{
+    background-color: rgb(56, 12, 96);
+}
+.btn-card >a{
+    color: grey;
+    transition: all 0.5s;
+}
+.btn-card:hover >a{
+    color: white;
+}
+.card-img-custom{
+    width: 100%;
+    max-height: 100%;
+    border-radius: 50px;
+}
+
+
+/* SECTION SKILLS AND FEEDBACK */
+.s3{
+    height: 90vh;
+    background-color: rgb(61, 49, 67);
+}
+
+/* Feedback */
+.feed-wrapper{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.feed-slider{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    margin-bottom: 100px;
+    
+}
+
+.feed{
+    height: 280px;
+    width: 280px;
+    border-radius: 25% ;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.feed:nth-child(1){
+    background-color: rgb(0, 0, 0);
+}
+.feed:nth-child(2){
+    background-color: rgb(39, 41, 39);
+}
+.feed:nth-child(3){
+    background-color: rgb(67, 65, 64);
+}
+.feed:nth-child(4){
+    background-color: rgb(105, 113, 115);
+}
+.feed:nth-child(5){
+    background-color: rgb(157, 164, 158);
+}
+
+.feed-container-img{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feed-img-user1{
+    width: 100%;
+    border-radius: 200px;
+    background-image: url('/public/media/section3/user1.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.feed-img-user2{
+    width: 100%;
+    border-radius: 200px;
+    background-image: url('/public/media/section3/user2.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.feed-img-user3{
+    width: 100%;
+    border-radius: 200px;
+    background-image: url('/public/media/section3/user3.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.feed-img-user4{
+    width: 100%;
+    border-radius: 200px;
+    background-image: url('/public/media/section3/user4.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.feed-img-user5{
+    width: 100%;
+    border-radius: 200px;
+    background-image: url('/public/media/section3/user5.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.feed-name{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.feed-container-icon{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feed-text{
+    text-align: justify;
+    font-style: italic;
+    border-top: 1px solid rgb(56, 12, 96);
+    width: 100%;
+}
+
+/* Skill */
+
+.container-skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 60%;
+}
+.bar-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.bar-text{
+    position: relative;
+    font-size: medium;
+}
+.bar-percent-1{
+    position: absolute;
+    top: 20px;
+    left: 470px;
+    z-index: 2;
+    background-color: rgb(56, 12, 96);
+    padding: 10px;
+    border-radius: 50%;
+    font-size:x-small;
+}
+.bar-percent-2{
+    position: absolute;
+    top: 20px;
+    left: 430px;
+    z-index: 2;
+    background-color: rgb(56, 12, 96);
+    padding: 10px;
+    border-radius: 50%;
+    font-size:x-small;
+}
+.bar-percent-3{
+    position: absolute;
+    top: 20px;
+    left: 380px;
+    z-index: 2;
+    background-color: rgb(56, 12, 96);
+    padding: 10px;
+    border-radius: 50%;
+    font-size:x-small;
+}
+.bar{
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    border:2px solid black;
+    position: relative;
+}
+
+.bar-percent1{
+    background-color: black;
+    width: 90%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+.bar-percent2{
+    background-color: black;
+    width: 80%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+.bar-percent3{
+    background-color: black;
+    width: 70%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+
+
+/* SECTION Contact Me */
+.s4{
+    height: 90vh;
+}
+
+.title-contact{
+    height: 20%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.form-container>label{
+    margin-left: 10px;
+}
+.input-form{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 5px solid rgb(61, 49, 67);
+    padding: 5px;
+}
+
+.btn-form{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgb(61, 49, 67);
+    border: none;
+    transition: all 1s;
+}
+.btn-form>a{
+    color: grey;
+    transition: all 1s;
+}
+
+.btn-form:hover>a{
+    color: white;
+}
+.btn-form:hover{
+    background-color: rgb(56, 12, 96);
+}
+
+/* SECTION Footer */
+
+.foot{
+    height: 10vh;
+    background-color: rgb(61, 49, 67);
+}
+
+.text-footer{
+    color: white;
+}
+
+/* Media Query */
+
