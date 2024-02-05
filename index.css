@@ -462,10 +462,13 @@ background-color: black;
 /* SECTION Footer */
 
 .foot{
-    height: 50vh;
+    height: 10vh;
     background-color: rgb(61, 49, 67);
 }
 
-.copy{
-    color: black;
+.text-footer{
+    color: white;
 }
+
+/* Media Query */
+
