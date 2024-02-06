@@ -363,14 +363,14 @@ function diagonalLoop(feeds) {
   });
 
 //Skills animazione
-gsap?.from('.bar-text >span',{
+gsap.from('.bar-text >span',{
     scrollTrigger:'.bar-text',
     left:0,
     duration:3,
     ease:'power2.out',
     stagger: 0.1,
 })
-gsap?.from('.bar >span',{
+gsap.from('.bar >span',{
     scrollTrigger:'.bar',
     width:'0px',
     duration:3,
