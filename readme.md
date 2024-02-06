@@ -1,0 +1,1 @@
+Sito web NO RESPONSIVE, implementato solo per dispositivi con grandi schermi.
